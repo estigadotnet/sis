@@ -7,19 +7,38 @@ start:
 -
 -
 - install ion-auth [x]
-```shell
-CI                          # → Root Directory
-└── application/
-    ├── config/
-    │   └── ion_auth.php
-    ├── controllers/
-    │   └── Auth.php
-    ├── libraries
-    │   └── Ion_auth.php
-    ├── models
-    │   └── Ion_auth_model.php
-    └── views/
-        └── auth/           # → Various view files
-```
+	```shell
+	CI                          # → Root Directory
+	└── application/
+	    ├── config/
+	    │   └── ion_auth.php
+	    ├── controllers/
+	    │   └── Auth.php
+	    ├── libraries
+	    │   └── Ion_auth.php
+	    ├── models
+	    │   └── Ion_auth_model.php
+	    └── views/
+	        └── auth/           # → Various view files
+	```
 -
 -
+- edit C:\xampp\htdocs\sis\application\config\autoload.php [x]
+	$autoload['libraries'] = array('database', 'session', 'ion_auth');
+-
+-
+- extract tabel2 pada database aktif untuk handling ion-auth [x]
+-
+-
+- edit C:\xampp\htdocs\sis\application\config\database.php [x]
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'db_sis',
+-
+-
+- trial running ion-auth di browser [x]
+	akses web address: localhost/sis/auth
+-
+-
+- 
