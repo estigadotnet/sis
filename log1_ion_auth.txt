@@ -37,8 +37,54 @@ start:
 	'database' => 'db_sis',
 -
 -
+- rename file C:\xampp\htdocs\sis\application\views\auth\login.php [x]
+	menjadi _login.php
+-
+- copy file C:\xampp\htdocs\sis\assets\adminlte\pages\examples\login.html [x]
+	ke folder C:\xampp\htdocs\sis\application\views\auth
+-
+-
+- rename file C:\xampp\htdocs\sis\application\views\auth\login.html [x]
+	menjadi login.php
+-
+-
+- modif file C:\xampp\htdocs\sis\application\views\auth\login.php
+- set title: [x]
+	<title><?php echo SITE_NAME; ?> | Log in</title>
+-
+-
+- login logo: [x]
+  <div class="login-logo">
+    <a href="#"><b><?php echo SITE_NAME; ?> </b> <?php echo SITE_VERSION; ?></a>
+  </div>
+-
+-
+- ubah path file assets [x]
+	<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+	menjadi
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+-
+-
+- ubah path file assets [x]
+	<script src="../../plugins/jquery/jquery.min.js"></script>
+	menjadi
+-
+-
+- gabung file _login.php ke login.php sesuai contoh [x]
+-
+-
+- script sebelum tag </body> [x]
+<script>
+  $(function () {
+    $('body').addClass('text-sm')
+    $('.btn').addClass('btn-sm')
+    $('.table').addClass('table-sm')
+    $('.form-control').addClass('form-control-sm')
+  })
+</script>
+-
+-
 - trial running ion-auth di browser [x]
 	akses web address: localhost/sis/auth
 -
 -
-- 
