@@ -20,36 +20,48 @@ documentation
 -------------
 project start
 -------------
+-
 - copy source codeigniter 3.1.11 ke c:\xampp\htdocs\sis [x]
 -
+-
 - extract hmvc [x]
+-
 -
 - copy hmvc core dan third_party [x]
 	copy file MY_Loader dan MY_Router ke folder C:\xampp\htdocs\sis\application\core
 	copy folder MX ke folder C:\xampp\htdocs\sis\application\third_party
 -
+-
 - buat folder C:\xampp\htdocs\sis\assets [x]
+-
 -
 - extract adminlte [x]
 -
+-
 - rename folder menjadi adminlte [x]
 -
+-
 - copy folder adminlte ke C:\xampp\htdocs\sis\assets\ [x]
+-
 -
 - ubah application\config\autoload.php: [x]
 	$autoload['libraries'] = array('database', 'session');
 	$autoload['helper'] = array('url');
 -
+-
 - ubah application\config\config.php: [x]
 	$config['base_url'] = 'http://localhost/sis/';
 	$config['index_page'] = ''; // 'index.php'; harus create .htaccess; menghilangkan link index.php di link address
+-
 -
 - ubah application\config\constants.php: [x]
 	define('SITE_NAME', 'SIS');
 	define('SITE_VERSION', 'v1.0');
 -
+-
 - ubah application\config\routes.php: [x]
 	$route['default_controller'] = 'dashboard'; // 'welcome'; route ke 'dashboard' untuk mengakses dashboard adminlte
+-
 -
 - create file C:\xampp\htdocs\sis\.htaccess [x]
 	isi file:
@@ -58,11 +70,13 @@ project start
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ index.php/$1 [L]
 -
+-
 - buat folder: [x]
 	application\modules\dashboard
 	application\modules\dashboard\controllers
 	application\modules\dashboard\models
 	application\modules\dashboard\views
+-
 -
 - copy file index.html: [x]
 	dari assets\adminlte
@@ -70,17 +84,24 @@ project start
 	jangan meng-overwrite file index.html yang existed di folder application\views
 	nama file index.html yang berasal dari adminlte direname menjadi _layout.php
 -
-- modif _layout.php
+-
+- modif _layout.php ::
+-   ||  ||  ||
+-   ||  ||  ||
+-   \/  \/  \/
 - title :: diganti variable SITE_NAME [x]
 	  <title><?php echo SITE_NAME . ' | ' . ucfirst($_caption) . ucfirst(isset($button) ? ' - ' . $button : ''); ?></title>
 	  // $_caption dan $_button diambil dari template harviacode
+-
 -
 - semua href="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/bla bla [x]
 	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
 	  // href="" yang tidak untuk link rel css :: biarkan saja
 -
+-
 - semua src="" untuk link rel js script diarahkan ke <?php echo base_url(); ?>assets/adminlte/bla bla [x]
 	  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+-
 -
 - tambah css untuk handle pagination [x]
     <style>
@@ -179,6 +200,7 @@ project start
       }
     </style>
 -
+-
 - tambah css untuk handle grocerycrud $output [x]
       <?php
       if (isset($css_files)){
@@ -186,8 +208,10 @@ project start
       	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
       <?php endforeach; }?>
 -
+-
 - text small [x]
 	  <body class="hold-transition sidebar-mini layout-fixed text-sm">
+-
 -
 - navbar [x]
       <!-- Navbar -->
@@ -215,12 +239,14 @@ project start
       </nav>
       <!-- /.navbar -->
 -
+-
 - brand logo [x]
         <!-- Brand Logo -->
         <a href="<?php echo site_url(); ?>" class="brand-link">
           <img src="<?php echo base_url(); ?>assets/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text "><?php echo "<b>" . SITE_NAME . "</b>" . ' ' . SITE_VERSION; ?></span>
         </a>
+-
 -
 - sidebar [x]
         <!-- Sidebar -->
@@ -235,11 +261,14 @@ project start
             </div>
           </div>
 -
+-
 - indent sub menu [x]
 	  <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
 -
+-
 - content title [x]
 	  <h1 class="m-0 text-dark"><?php echo $_caption; ?></h1>
+-
 -
 - breadcrumb [x]
                 <!-- <ol class="breadcrumb float-sm-right">
@@ -265,6 +294,7 @@ project start
                     }
                   } ?>
                 </ol>
+-
 -
 - hapus content, diganti variable $output dan load->view [x]
         <!-- Main content -->
@@ -292,6 +322,7 @@ project start
         </section>
         <!-- /.content -->
 -
+-
 - footer [x]
       <!-- <footer class="main-footer">
         <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
@@ -308,6 +339,7 @@ project start
         </div>
       </footer>
 -
+-
 - tambah script untuk memperkecil tampilan [x]
     <script>
       $(function () {
@@ -317,12 +349,14 @@ project start
       })
     </script>
 -
+-
 - tambah script untuk handle grocerycrud $output [x]
     <?php
     if (isset($js_files)){
     foreach($js_files as $file): ?>
     		<script src="<?php echo $file; ?>"></script>
     <?php endforeach; }?>
+-
 -
 - create file C:\xampp\htdocs\sis\application\modules\dashboard\controllers\Dashboard.php [x]
 <?php
@@ -336,6 +370,7 @@ class Dashboard extends CI_Controller
     $this->load->view('_layout', $data);
   }
 }
+-
 -
 - create file C:\xampp\htdocs\sis\application\modules\dashboard\views\dashboard.php [x]
 <!-- Small boxes (Stat box) -->
