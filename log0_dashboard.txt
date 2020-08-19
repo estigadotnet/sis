@@ -74,18 +74,19 @@ project start
 - buat folder: [x]
 	application\modules\dashboard
 	application\modules\dashboard\controllers
-	application\modules\dashboard\models
 	application\modules\dashboard\views
 -
 -
 - copy file index.html: [x]
-	dari assets\adminlte
-	ke application\views
-	jangan meng-overwrite file index.html yang existed di folder application\views
-	nama file index.html yang berasal dari adminlte direname menjadi _layout.php
+	dari C:\xampp\htdocs\sis\assets\adminlte
+	ke   C:\xampp\htdocs\sis\application\modules\dashboard\views
 -
 -
-- modif _layout.php ::
+- rename file C:\xampp\htdocs\sis\application\modules\dashboard\views\index.html [x]
+	menjadi _layout.php
+-
+-
+- modif C:\xampp\htdocs\sis\application\modules\dashboard\views\_layout.php ::
 -   ||  ||  ||
 -   ||  ||  ||
 -   \/  \/  \/
@@ -367,7 +368,7 @@ class Dashboard extends CI_Controller
   function index() {
     $data['_view']    = 'dashboard.php';
     $data['_caption'] = 'Dashboard';
-    $this->load->view('_layout', $data);
+    $this->load->view('dashboard/_layout', $data);
   }
 }
 -
