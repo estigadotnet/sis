@@ -23,3 +23,7 @@ folder :: c:\xampp\htdocs\sis
 2:53 PM 8/19/2020
 - sudah tercopy hmvc core dan third_party
 
+3:18 PM 8/19/2020
+- mulai modif adminlte 3.0.5
+- copy source adminlte ke C:\xampp\htdocs\sis\assets\adminlte
+- ubah route ke home untuk mengakses dashboard adminlte
