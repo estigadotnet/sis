@@ -26,4 +26,36 @@ folder :: c:\xampp\htdocs\sis
 3:18 PM 8/19/2020
 - mulai modif adminlte 3.0.5
 - copy source adminlte ke C:\xampp\htdocs\sis\assets\adminlte
-- ubah route ke home untuk mengakses dashboard adminlte
+- ubah routes.php:
+	$route['default_controller'] = 'dashboard'; // 'welcome';
+	ke 'dashboard' untuk mengakses dashboard adminlte
+- ubah config.php:
+	$config['base_url'] = 'http://localhost/sis/';
+	$config['index_page'] = ''; // 'index.php';
+- ubah autoload.php:
+	$autoload['libraries'] = array('database', 'session');
+	$autoload['helper'] = array('url');
+- ubah constants.php:
+	define('SITE_NAME', 'SIS');
+	define('SITE_VERSION', 'v1.0');
+- copy .htaccess
+- buat folder:
+	application\modules\dashboard
+	application\modules\dashboard\controllers
+	application\modules\dashboard\models
+	application\modules\dashboard\views
+- copy file index.html:
+	dari assets\adminlte
+	ke application\views
+- rename file index.html to _layout.php
+- modif _layout.php
+	- diarahkan ke <?php echo base_url(); ?>assets/adminlte/
+	- hapus content, diganti variable $output atau load->view
+	- tambah css untuk handle pagination
+	- tambah css untuk handle grocerycrud $output
+	- tambah script untuk memperkecil tampilan
+	- tambah script untuk handle grocerycrud $output
+	- title :: diganti variable SITE_NAME
+	- <body class="text-sm">
+	- <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+	
