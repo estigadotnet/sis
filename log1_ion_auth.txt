@@ -1,0 +1,3 @@
+skenario:
+- mengaktifkan login dan logout di adminlte
+- menggunakan ion-auth
