@@ -1,3 +1,4 @@
+
 2:44 PM 8/19/2020
 skenario
 - codeigniter 3.1.11
@@ -6,4 +7,19 @@ skenario
 - harviacode 1.4
 - adminlte 3.0.5
 - grocerycrud
+
+2:46 PM 8/19/2020
+documentation
+- change logs
+- future features
+- known issues
+- credits
+- license and logo
+
+2:47 PM 8/19/2020
+folder :: c:\xampp\htdocs\sis
+- sudah tercopy source codeigniter 3.1.11
+
+2:53 PM 8/19/2020
+- sudah tercopy hmvc core dan third_party
 
