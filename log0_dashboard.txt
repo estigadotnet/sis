@@ -276,24 +276,30 @@ project start
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item active">Dashboard v1</li>
                 </ol> -->
+                <!-- Breadcrumbs-->
                 <ol class="breadcrumb float-sm-right">
-                  <?php
-                  if ($this->uri->uri_string <> '') {
-                  ?>
+                  <?php if ($this->uri->uri_string <> ''): ?>
                     <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>">Dashboard</a></li>
-                    <?php
-                    if (count($this->uri->segments) == 1) {
-                    ?>
-                      <li class="breadcrumb-item active"><?php echo $_caption; ?></li>
-                    <?php
-                    }
-                    else {
-                    ?>
-                      <li class="breadcrumb-item"><a href="<?php echo $this->uri->segment(1); ?>"><?php echo $_caption; ?></a></li>
-                      <li class="breadcrumb-item active"><?php echo isset($button) ? $button : ''; ?></li>
-                    <?php
-                    }
-                  } ?>
+                  <?php else: ?>
+                    <li class="breadcrumb-item">Dashboard</li>
+                  <?php endif; ?>
+                  <?php $index = 0; ?>
+                  <?php foreach ($this->uri->segments as $segment): ?>
+                  	<?php
+                      ++$index;
+                  		$url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment;
+                  		$is_active =  $url == $this->uri->uri_string;
+                  	?>
+                    <?php if ($index <= 2): ?>
+                  	<li class="breadcrumb-item <?php echo $is_active ? 'active': '' ?>">
+                  		<?php if($is_active): ?>
+                  			<?php echo ucfirst($segment) ?>
+                  		<?php else: ?>
+                  			<a href="<?php echo site_url($url) ?>"><?php echo ucfirst($segment) ?></a>
+                  		<?php endif; ?>
+                  	</li>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
                 </ol>
 -
 -
