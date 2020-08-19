@@ -85,6 +85,6 @@ start:
 -
 -
 - trial running ion-auth di browser [x]
-	akses web address: localhost/sis/auth
+	akses web address: localhost/sis/auth/login
 -
 -
