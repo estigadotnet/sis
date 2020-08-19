@@ -181,6 +181,52 @@ project start
 	- text small
 	  <body class="hold-transition sidebar-mini layout-fixed text-sm">
 -
+	- navbar
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <?php if ($this->session->userdata('nama_sklh') <> '') { ?>
+            <div class="nav-link"><b><?php echo $this->session->userdata('nama_sklh') . ' | ' . $this->session->userdata('tahun_ajaran'); ?></b></div>
+            <?php } ?>
+          </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+-
+	- brand logo
+        <!-- Brand Logo -->
+        <a href="<?php echo site_url(); ?>" class="brand-link">
+          <img src="<?php echo base_url(); ?>assets/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <span class="brand-text "><?php echo "<b>" . SITE_NAME . "</b>" . ' ' . SITE_VERSION; ?></span>
+        </a>
+-
+	- sidebar
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <!-- <img src="<?php //echo base_url(); ?>assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
+            </div>
+            <div class="info">
+              <a href="#" class="d-block"><?php echo $this->session->userdata('user_name'); ?></a>
+            </div>
+          </div>
+-
 	- indent sub menu
 	  <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
 -
