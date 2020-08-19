@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 	{
 		// $this->load->view('welcome_message');
 		$data['_view']    = 'welcome_message';
-    $data['_caption'] = 'Welcome';
+    $data['_caption'] = '';
     $this->load->view('dashboard/_layout', $data);
 	}
 }
