@@ -48,14 +48,65 @@ folder :: c:\xampp\htdocs\sis
 	dari assets\adminlte
 	ke application\views
 - rename file index.html to _layout.php
+
 - modif _layout.php
-	- diarahkan ke <?php echo base_url(); ?>assets/adminlte/
-	- hapus content, diganti variable $output atau load->view
+	- title :: diganti variable SITE_NAME
+	  <title><?php echo SITE_NAME . ' | ' . ucfirst($_caption) . ucfirst(isset($button) ? ' - ' . $button : ''); ?></title>
+	  $_caption dan $_button diambil dari template harviacode
+	- semua href="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/
+	- semua src="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/
 	- tambah css untuk handle pagination
 	- tambah css untuk handle grocerycrud $output
+	- text small
+	  <body class="text-sm">
+	- indent sub menu
+	  <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+	- content title
+	  <h1 class="m-0 text-dark"><?php echo $_caption; ?></h1>
+	- breadcrumb
+<ol class="breadcrumb float-sm-right">
+                  <?php
+                  if ($this->uri->uri_string <> '') {
+                  ?>
+                    <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>">Dashboard</a></li>
+                    <?php
+                    if (count($this->uri->segments) == 1) {
+                    ?>
+                      <li class="breadcrumb-item active"><?php echo $_caption; ?></li>
+                    <?php
+                    }
+                    else {
+                    ?>
+                      <li class="breadcrumb-item"><a href="<?php echo $this->uri->segment(1); ?>"><?php echo $_caption; ?></a></li>
+                      <li class="breadcrumb-item active"><?php echo isset($button) ? $button : ''; ?></li>
+                    <?php
+                    }
+                  } ?>
+                </ol>
+	- hapus content, diganti variable $output dan load->view
+<?php
+            if (!isset($output)) {
+              if (isset($_view) && $_view) {
+                $this->load->view($_view);
+              }
+            }
+            else {
+              echo isset($_examples) ? $_examples : '';
+            ?>
+              <div style='height: 20px;'></div>
+              <div style="padding: 10px">
+                <?php echo $output; ?>
+              </div>
+            <?php
+            }
+            ?>
+	- footer
+<footer class="main-footer">
+        <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="https://one-tech-computer.business.site/" target="_blank">OneTech System Solution</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b><?php echo SITE_NAME; ?> </b> <?php echo SITE_VERSION; ?>
+        </div>
+      </footer>	  
 	- tambah script untuk memperkecil tampilan
 	- tambah script untuk handle grocerycrud $output
-	- title :: diganti variable SITE_NAME
-	- <body class="text-sm">
-	- <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
-	

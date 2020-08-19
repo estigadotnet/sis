@@ -822,12 +822,32 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Dashboard</h1>
+                <!-- <h1 class="m-0 text-dark">Dashboard</h1> -->
+                <h1 class="m-0 text-dark"><?php echo $_caption; ?></h1>
               </div><!-- /.col -->
               <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
+                <!-- <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol> -->
+                <ol class="breadcrumb float-sm-right">
+                  <?php
+                  if ($this->uri->uri_string <> '') {
+                  ?>
+                    <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>">Dashboard</a></li>
+                    <?php
+                    if (count($this->uri->segments) == 1) {
+                    ?>
+                      <li class="breadcrumb-item active"><?php echo $_caption; ?></li>
+                    <?php
+                    }
+                    else {
+                    ?>
+                      <li class="breadcrumb-item"><a href="<?php echo $this->uri->segment(1); ?>"><?php echo $_caption; ?></a></li>
+                      <li class="breadcrumb-item active"><?php echo isset($button) ? $button : ''; ?></li>
+                    <?php
+                    }
+                  } ?>
                 </ol>
               </div><!-- /.col -->
             </div><!-- /.row -->
@@ -861,11 +881,18 @@
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
-      <footer class="main-footer">
+      <!-- <footer class="main-footer">
         <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
           <b>Version</b> 3.0.5
+        </div>
+      </footer> -->
+      <footer class="main-footer">
+        <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="https://one-tech-computer.business.site/" target="_blank">OneTech System Solution</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b><?php echo SITE_NAME; ?> </b> <?php echo SITE_VERSION; ?>
         </div>
       </footer>
 
