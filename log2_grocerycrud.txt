@@ -1,0 +1,29 @@
+skenario:
+- crud dengan grocerycrud
+- run grocerycrud dengan adminlte
+
+start:
+- extract master grocerycrud [x]
+-
+- copy folder application dan assets ke c:\xampp\htdocs\sis [x]
+-
+- buat folder [x]
+	grocerycrud
+	grocerycrud\controllers
+	grocerycrud\models
+	grocerycrud\views
+	di c:\xampp\htdocs\sis\application\modules
+-
+- move file example.php [x]
+	dari C:\xampp\htdocs\sis\application\views
+	ke   C:\xampp\htdocs\sis\application\modules\grocerycrud\views
+-
+- move file Grocery_crud_model.php [x]
+	dari C:\xampp\htdocs\sis\application\models
+	ke   C:\xampp\htdocs\sis\application\modules\grocerycrud\models
+-
+- move file Examples.php [x]
+	dari C:\xampp\htdocs\sis\application\controllers
+	ke   C:\xampp\htdocs\sis\application\modules\grocerycrud\controllers
+-
+- 
