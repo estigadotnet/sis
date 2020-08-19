@@ -14,7 +14,24 @@ class Examples extends CI_Controller {
 
 	public function _example_output($output = null)
 	{
-		$this->load->view('example.php',(array)$output);
+		// $this->load->view('example.php',(array)$output);
+		// $data['_view']    = 'example';
+    // $data['_caption'] = 'GroceryCRUD Examples';
+    // $this->load->view('dashboard/_layout', $data);
+
+		$output->_examples = "
+		<div>
+			<a href='".site_url("examples/customers_management")."'>Customers</a> |
+			<a href='".site_url("examples/orders_management")."'>Orders</a> |
+			<a href='".site_url("examples/products_management")."'>Products</a> |
+			<a href='".site_url("examples/offices_management")."'>Offices</a> |
+			<a href='".site_url("examples/employees_management")."'>Employees</a> |
+			<a href='".site_url("examples/film_management")."'>Films</a> |
+			<a href='".site_url("examples/multigrids")."'>Multigrid [BETA]</a>
+		</div>
+		";
+		$output->_caption = 'GroceryCRUD Examples';
+		$this->load->view('dashboard/_layout',(array)$output);
 	}
 
 	public function offices()
