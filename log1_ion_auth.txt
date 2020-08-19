@@ -1,3 +1,25 @@
 skenario:
 - mengaktifkan login dan logout di adminlte
 - menggunakan ion-auth
+
+start:
+- extract source ion-auth [x]
+-
+-
+- install ion-auth [x]
+```shell
+CI                          # → Root Directory
+└── application/
+    ├── config/
+    │   └── ion_auth.php
+    ├── controllers/
+    │   └── Auth.php
+    ├── libraries
+    │   └── Ion_auth.php
+    ├── models
+    │   └── Ion_auth_model.php
+    └── views/
+        └── auth/           # → Various view files
+```
+-
+-
