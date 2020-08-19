@@ -1,6 +1,6 @@
-
-2:44 PM 8/19/2020
+--------
 skenario
+--------
 - codeigniter 3.1.11
 - hmvc
 - ion-auth
@@ -8,63 +8,191 @@ skenario
 - adminlte 3.0.5
 - grocerycrud
 
-2:46 PM 8/19/2020
+-------------
 documentation
+-------------
 - change logs
 - future features
 - known issues
 - credits
 - license and logo
 
-2:47 PM 8/19/2020
-folder :: c:\xampp\htdocs\sis
-- sudah tercopy source codeigniter 3.1.11
-
-2:53 PM 8/19/2020
-- sudah tercopy hmvc core dan third_party
-
-3:18 PM 8/19/2020
-- mulai modif adminlte 3.0.5
+-------------
+project start
+-------------
+- copy source codeigniter 3.1.11 ke c:\xampp\htdocs\sis
+-
+- copy hmvc core dan third_party
+-
+- modif adminlte 3.0.5
+-
 - copy source adminlte ke C:\xampp\htdocs\sis\assets\adminlte
-- ubah routes.php:
-	$route['default_controller'] = 'dashboard'; // 'welcome';
-	ke 'dashboard' untuk mengakses dashboard adminlte
-- ubah config.php:
-	$config['base_url'] = 'http://localhost/sis/';
-	$config['index_page'] = ''; // 'index.php';
-- ubah autoload.php:
+-
+- ubah application\config\autoload.php:
 	$autoload['libraries'] = array('database', 'session');
 	$autoload['helper'] = array('url');
-- ubah constants.php:
+-
+- ubah application\config\config.php:
+	$config['base_url'] = 'http://localhost/sis/';
+	$config['index_page'] = ''; // 'index.php'; harus create .htaccess; menghilangkan link index.php di link address
+-
+- ubah application\config\constants.php:
 	define('SITE_NAME', 'SIS');
 	define('SITE_VERSION', 'v1.0');
-- copy .htaccess
+-
+- ubah application\config\routes.php:
+	$route['default_controller'] = 'dashboard'; // 'welcome'; route ke 'dashboard' untuk mengakses dashboard adminlte
+-
+- create file .htaccess
+	isi file:
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+-
 - buat folder:
 	application\modules\dashboard
 	application\modules\dashboard\controllers
 	application\modules\dashboard\models
 	application\modules\dashboard\views
+-
 - copy file index.html:
 	dari assets\adminlte
 	ke application\views
-- rename file index.html to _layout.php
-
+	jangan meng-overwrite file index.html yang existed di folder application\views
+	nama file direname menjadi _layout.php
+-
 - modif _layout.php
 	- title :: diganti variable SITE_NAME
 	  <title><?php echo SITE_NAME . ' | ' . ucfirst($_caption) . ucfirst(isset($button) ? ' - ' . $button : ''); ?></title>
-	  $_caption dan $_button diambil dari template harviacode
-	- semua href="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/
-	- semua src="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/
+	  // $_caption dan $_button diambil dari template harviacode
+-
+	- semua href="" untuk link rel css diarahkan ke <?php echo base_url(); ?>assets/adminlte/bla bla
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+	  // href="" yang tidak untuk link rel css :: biarkan saja
+-
+	- semua src="" untuk link rel js script diarahkan ke <?php echo base_url(); ?>assets/adminlte/bla bla
+	  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+-
 	- tambah css untuk handle pagination
+    <style>
+      .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+      .pagination > li {
+        display: inline;
+      }
+      .pagination > li > a,
+      .pagination > li > span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #428bca;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+      }
+      .pagination > li:first-child > a,
+      .pagination > li:first-child > span {
+        margin-left: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      .pagination > li:last-child > a,
+      .pagination > li:last-child > span {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      .pagination > li > a:hover,
+      .pagination > li > span:hover,
+      .pagination > li > a:focus,
+      .pagination > li > span:focus {
+        color: #2a6496;
+        background-color: #eee;
+        border-color: #ddd;
+      }
+      .pagination > .active > a,
+      .pagination > .active > span,
+      .pagination > .active > a:hover,
+      .pagination > .active > span:hover,
+      .pagination > .active > a:focus,
+      .pagination > .active > span:focus {
+        z-index: 2;
+        color: #fff;
+        cursor: default;
+        background-color: #428bca;
+        border-color: #428bca;
+      }
+      .pagination > .disabled > span,
+      .pagination > .disabled > span:hover,
+      .pagination > .disabled > span:focus,
+      .pagination > .disabled > a,
+      .pagination > .disabled > a:hover,
+      .pagination > .disabled > a:focus {
+        color: #999;
+        cursor: not-allowed;
+        background-color: #fff;
+        border-color: #ddd;
+      }
+      .pagination-lg > li > a,
+      .pagination-lg > li > span {
+        padding: 10px 16px;
+        font-size: 18px;
+      }
+      .pagination-lg > li:first-child > a,
+      .pagination-lg > li:first-child > span {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+      .pagination-lg > li:last-child > a,
+      .pagination-lg > li:last-child > span {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+      .pagination-sm > li > a,
+      .pagination-sm > li > span {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+      .pagination-sm > li:first-child > a,
+      .pagination-sm > li:first-child > span {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      .pagination-sm > li:last-child > a,
+      .pagination-sm > li:last-child > span {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    </style>
+-
 	- tambah css untuk handle grocerycrud $output
+      <?php
+      if (isset($css_files)){
+      foreach($css_files as $file): ?>
+      	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+      <?php endforeach; }?>
+-
 	- text small
-	  <body class="text-sm">
+	  <body class="hold-transition sidebar-mini layout-fixed text-sm">
+-
 	- indent sub menu
 	  <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+-
 	- content title
 	  <h1 class="m-0 text-dark"><?php echo $_caption; ?></h1>
+-
 	- breadcrumb
-<ol class="breadcrumb float-sm-right">
+                <!-- <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol> -->
+                <ol class="breadcrumb float-sm-right">
                   <?php
                   if ($this->uri->uri_string <> '') {
                   ?>
@@ -83,8 +211,13 @@ folder :: c:\xampp\htdocs\sis
                     }
                   } ?>
                 </ol>
+-
 	- hapus content, diganti variable $output dan load->view
-<?php
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+
+            <?php
             if (!isset($output)) {
               if (isset($_view) && $_view) {
                 $this->load->view($_view);
@@ -100,13 +233,40 @@ folder :: c:\xampp\htdocs\sis
             <?php
             }
             ?>
+
+          </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+-
 	- footer
-<footer class="main-footer">
+      <!-- <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 3.0.5
+        </div>
+      </footer> -->
+      <footer class="main-footer">
         <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="https://one-tech-computer.business.site/" target="_blank">OneTech System Solution</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
           <b><?php echo SITE_NAME; ?> </b> <?php echo SITE_VERSION; ?>
         </div>
-      </footer>	  
+      </footer>
+-
 	- tambah script untuk memperkecil tampilan
+    <script>
+      $(function () {
+        $('.btn').addClass('btn-sm')
+        $('.table').addClass('table-sm')
+        $('.form-control').addClass('form-control-sm')
+      })
+    </script>
+-
 	- tambah script untuk handle grocerycrud $output
+    <?php
+    if (isset($js_files)){
+    foreach($js_files as $file): ?>
+    		<script src="<?php echo $file; ?>"></script>
+    <?php endforeach; }?>
+-
