@@ -24,4 +24,26 @@ start:
 	dari C:\xampp\htdocs\sis\application\controllers
 	ke   C:\xampp\htdocs\sis\application\modules\examples\controllers
 -
-- 
+- modif file C:\xampp\htdocs\sis\application\modules\examples\controllers\Examples.php [x]
+	// $this->load->view('example.php',(array)$output);
+	menjadi
+		$output->_examples = "
+		<div>
+			<a href='".site_url("examples/customers_management")."'>Customers</a> |
+			<a href='".site_url("examples/orders_management")."'>Orders</a> |
+			<a href='".site_url("examples/products_management")."'>Products</a> |
+			<a href='".site_url("examples/offices_management")."'>Offices</a> |
+			<a href='".site_url("examples/employees_management")."'>Employees</a> |
+			<a href='".site_url("examples/film_management")."'>Films</a> |
+			<a href='".site_url("examples/multigrids")."'>Multigrid [BETA]</a>
+		</div>
+		";
+		$output->_caption = 'GroceryCRUD Examples';
+		$this->load->view('dashboard/_layout',(array)$output);
+-
+- tambahkan di function __construct() [x]
+	if (!$this->ion_auth->logged_in()) redirect('auth/login', 'refresh');
+-
+- trial running grocerycrud di browser [x]
+	akses web address: localhost/sis/examples
+-
