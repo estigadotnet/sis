@@ -1,4 +1,14 @@
 
+sekarang apa ?
+==============
+10:25 PM 8/20/2020
+butuh coba proses buat daftar kelas,
+butuh ada data siswa
+butuh ada proses import data dari excel
+progres pengerjaan aplikasi sudah sampai tahap
+
+
+
 just note
 =========
 - lingkup aplikasi SIS:

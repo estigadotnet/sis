@@ -232,7 +232,7 @@
               <!-- daftar -->
               <li class="nav-header">DAFTAR</li>
               <li class="nav-item">
-                <a href="<?php echo site_url('d01_kls'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
+                <a href="<?php echo site_url('d01_kls/index2'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Kelas</p>
                 </a>

@@ -10,6 +10,7 @@ class D01_kls extends CI_Controller
         parent::__construct();
         $this->load->model('D01_kls_model');
         $this->load->library('form_validation');
+        $this->load->library('grocery_CRUD');
         if (!$this->ion_auth->logged_in()) redirect('auth/login', 'refresh');
     }
 
@@ -222,6 +223,29 @@ class D01_kls extends CI_Controller
         );
 
         $this->load->view('D01_kls/d01_kls_doc',$data);
+    }
+
+    public function _example_output($output = null) {
+      //$output->_view    = 'd01_kls/d01_kls_form2';
+  		$output->_caption = 'Daftar Kelas';
+  		$this->load->view('dashboard/_layout', (array)$output);
+    }
+
+    // public function create2() {
+    public function index2() {
+      $crud = new grocery_CRUD();
+      // $crud->set_theme('datatables');
+      $crud->set_table('d01_kls');
+      $crud->set_relation('idthaj', 'db_sis.s01_thaj', 'TahunAjaran');
+      $crud->set_relation('idsklh', 'db_sis.s02_sklh', 'Nama');
+      $crud->set_relation('idkls', 's03_kls', 'Nama');
+      $crud->set_relation_n_n('siswa', 'd02_ssw', 's05_ssw', 'iddkls', 'idssw', 'Nama');
+      $crud->display_as('idthaj', 'Tahun Ajaran');
+      $crud->display_as('idsklh', 'Sekolah');
+      $crud->display_as('idkls', 'Kelas');
+      $crud->set_subject('Daftar Kelas');
+      $output = $crud->render();
+      $this->_example_output($output);
     }
 
 }
