@@ -38,6 +38,7 @@ class Grocery_crud_model  extends CI_Model  {
 	function __construct()
     {
         parent::__construct();
+				set_dbaktif('db_sis');
     }
 
     function db_table_exists($table_name = null)
@@ -190,7 +191,7 @@ class Grocery_crud_model  extends CI_Model  {
     	} else {
             $this->db->select($this->table_name . '.' . $key);
         }
-        
+
         return $this->db->get($this->table_name)->num_rows();
     }
 

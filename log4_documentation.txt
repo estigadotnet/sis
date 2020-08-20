@@ -1,4 +1,33 @@
 
+just note
+=========
+- lingkup aplikasi SIS:
+	- pendataan Tahun Ajaran
+	- pendataan Sekolah
+	- pendataan Kelas
+	- pendataan Guru
+	- pendataan Siswa
+	- pendataan Daftar Kelas
+	- pendataan Daftar Siswa
+	- penerimaan Siswa Baru
+	- kenaikan kelas Siswa
+	- kelulusan Siswa
+	- auto-numbering untuk siswa baru
+
+- lingkup modul pembayaran SPP
+	- transaksi pembayaran spp dan non-rutin
+	- transaksi pembayaran tunggakan
+	- laporan pembayaran
+	- laporan tunggakan
+	- ubah data spp
+	- ?
+
+- lingkup modul keuangan sekolah
+	- input pengeluaran belanja sekolah
+	- summary mutasi bank
+
+
+
 to do list
 ==========
 - check lagi kegunaan pemilihan data 'tahun ajaran' pada saat login,
