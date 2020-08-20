@@ -69,6 +69,10 @@ class Auth extends CI_Controller
 		// validate form input
 		$this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
 		$this->form_validation->set_rules('password', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
+		// check combo tahun ajaran
+		$this->form_validation->set_rules('idthaj', 'Tahun Ajaran',
+			array("required", array("f_check_tahun_ajaran", function($tahunajaran) {return $tahunajaran != "Tahun Ajaran";})),
+			array("f_check_tahun_ajaran" => "Tahun Ajaran harus terisi !"));
 
 		if ($this->form_validation->run() === TRUE)
 		{
@@ -83,7 +87,7 @@ class Auth extends CI_Controller
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 
 				/**
-				 * simpan simpan session setelah berhasil login
+				 * simpan variabel session yang diperlukan setelah berhasil login
 				 */
 
 				// simpan session username
@@ -91,6 +95,13 @@ class Auth extends CI_Controller
 				$users = $this->Users_model->get_by_id($this->session->userdata('user_id'));
 	      $this->session->set_userdata('username', $users->username);
 
+				// simpan session data tabel tahun ajaran, sesuai tahun ajaran yang dipilih oleh user
+				$this->load->model('S01_thaj/S01_thaj_model');
+				$s01_thaj = $this->S01_thaj_model->get_by_id($this->input->post('idthaj'));
+				$this->session->set_userdata('idthaj', $this->input->post('idthaj'));
+				$this->session->set_userdata('tahunajaran', $s01_thaj->TahunAjaran);
+				$this->session->set_userdata('saldoawal', $s01_thaj->SaldoAwal);
+				
 				redirect('/', 'refresh');
 			}
 			else
@@ -119,6 +130,10 @@ class Auth extends CI_Controller
 				'id' => 'password',
 				'type' => 'password',
 			];
+
+			// ambil data tahun ajaran
+			$this->load->model('S01_thaj/S01_thaj_model');
+			$this->data['s01_thaj'] = $this->S01_thaj_model->get_all();
 
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
 		}

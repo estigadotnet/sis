@@ -66,6 +66,24 @@
           </div>
         </div>
 
+        <!-- tahun ajaran -->
+        <?php //echo pre($s01_thaj); ?>
+        <div class="input-group mb-3">
+            <select class="form-control" name="idthaj">
+              <option>Tahun Ajaran</option>
+              <?php foreach ($s01_thaj as $r) {
+                ?>
+                <option value="<?php echo $r->idthaj; ?>"><?php echo $r->TahunAjaran; ?></option>
+                <?php
+              } ?>
+            </select>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="far fa-calendar-alt"></span>
+              </div>
+            </div>
+        </div>
+
         <div class="row">
           <!-- <div class="col-8">
             <div class="icheck-primary">
