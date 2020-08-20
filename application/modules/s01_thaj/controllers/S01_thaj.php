@@ -10,7 +10,6 @@ class S01_thaj extends CI_Controller
         parent::__construct();
         $this->load->model('S01_thaj_model');
         $this->load->library('form_validation');
-
         if (!$this->ion_auth->logged_in()) redirect('auth/login', 'refresh');
     }
 

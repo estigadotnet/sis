@@ -187,7 +187,7 @@
                    with font-awesome or any other icon font library -->
 
               <!-- dashboard -->
-              <li class="nav-item has-treeview menu-open">
+              <li class="nav-item">
                 <a href="<?php echo site_url(); ?>" class="nav-link <?php echo ($this->uri->segment(1) == '' ? 'active' : ($this->uri->segment(1) == 'dashboard' ? 'active' : '')); ?>"> <!-- active -->
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>

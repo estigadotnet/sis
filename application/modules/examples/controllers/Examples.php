@@ -10,7 +10,6 @@ class Examples extends CI_Controller {
 		$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
-
 		if (!$this->ion_auth->logged_in()) redirect('auth/login', 'refresh');
 	}
 

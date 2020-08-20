@@ -114,6 +114,11 @@ class Auth extends CI_Controller
 				$this->session->set_userdata('namasklh', $s02_sklh->Nama);
 				$this->session->set_userdata('dbaktif', $s02_sklh->Db);
 
+				/**
+				 * pindah database sesuai pilihan user saat login
+				 */
+				set_dbaktif($this->session->userdata('dbaktif'));
+
 				redirect('/', 'refresh');
 			}
 			else
