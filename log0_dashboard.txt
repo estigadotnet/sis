@@ -3,10 +3,11 @@ skenario
 --------
 - codeigniter 3.1.11
 - hmvc
-- ion-auth
-- harviacode 1.4
 - adminlte 3.0.5
+- ion-auth
 - grocerycrud
+- harviacode 1.4
+
 
 -------------
 documentation

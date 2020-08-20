@@ -1,4 +1,27 @@
 
+to do list
+==========
+- check lagi kegunaan pemilihan data 'tahun ajaran' pada saat login,
+  apakah masih berguna atau tidak pada saat aplikasi running, karena database jadi satu untuk semua tahun ajaran,
+  semua data bisa di-trace
+- isi content dashboard
+	- total siswa pada tahun ajaran terpilih
+	- daftar sekolah yang dikelola
+	- total pemasukan per hari ini
+	- total tunggakan per hari ini
+
+
+
+documentation
+=============
+- change logs
+- future features
+- known issues
+- credits
+- license and logo
+
+
+
 alur proses
 ===========
 - start
@@ -6,6 +29,8 @@ alur proses
 - default route: dashboard
 - show dashboard
 - end
+
+
 
 keterangan per menu
 ===================
