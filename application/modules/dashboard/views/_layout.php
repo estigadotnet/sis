@@ -142,8 +142,8 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <?php if ($this->session->userdata('nama_sklh') <> '') { ?>
-            <div class="nav-link"><b><?php echo $this->session->userdata('nama_sklh') . ' | ' . $this->session->userdata('tahun_ajaran'); ?></b></div>
+            <?php if ($this->session->userdata('namasklh') <> '') { ?>
+            <div class="nav-link"><b><?php echo $this->session->userdata('namasklh') . ' | ' . $this->session->userdata('tahunajaran'); ?></b></div>
             <?php } ?>
           </li>
         </ul>

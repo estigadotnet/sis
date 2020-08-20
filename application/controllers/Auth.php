@@ -73,6 +73,10 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('idthaj', 'Tahun Ajaran',
 			array("required", array("f_check_tahun_ajaran", function($tahunajaran) {return $tahunajaran != "Tahun Ajaran";})),
 			array("f_check_tahun_ajaran" => "Tahun Ajaran harus terisi !"));
+		// check combo sekolah
+		$this->form_validation->set_rules('idsklh', 'Sekolah',
+			array("required", array("f_check_sekolah", function($sekolah) {return $sekolah != "Sekolah";})),
+			array("f_check_sekolah" => "Sekolah harus terisi !"));
 
 		if ($this->form_validation->run() === TRUE)
 		{
@@ -101,7 +105,15 @@ class Auth extends CI_Controller
 				$this->session->set_userdata('idthaj', $this->input->post('idthaj'));
 				$this->session->set_userdata('tahunajaran', $s01_thaj->TahunAjaran);
 				$this->session->set_userdata('saldoawal', $s01_thaj->SaldoAwal);
-				
+
+				// simpan session data tabel sekolah, sesuai dengan sekolah yang dipilih oleh user
+				$this->load->model('S02_sklh/S02_sklh_model');
+				$s02_sklh = $this->S02_sklh_model->get_by_id($this->input->post('idsklh'));
+				$this->session->set_userdata('idsklh', $this->input->post('idsklh'));
+				$this->session->set_userdata('kodesklh', $s02_sklh->Kode);
+				$this->session->set_userdata('namasklh', $s02_sklh->Nama);
+				$this->session->set_userdata('dbaktif', $s02_sklh->Db);
+
 				redirect('/', 'refresh');
 			}
 			else
@@ -134,6 +146,10 @@ class Auth extends CI_Controller
 			// ambil data tahun ajaran
 			$this->load->model('S01_thaj/S01_thaj_model');
 			$this->data['s01_thaj'] = $this->S01_thaj_model->get_all();
+
+			// ambil data sekolah
+			$this->load->model('S02_sklh/S02_sklh_model');
+			$this->data['s02_sklh'] = $this->S02_sklh_model->get_all();
 
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
 		}

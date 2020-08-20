@@ -84,6 +84,24 @@
             </div>
         </div>
 
+        <!-- sekolah -->
+        <?php //echo pre($s01_thaj); ?>
+        <div class="input-group mb-3">
+            <select class="form-control" name="idsklh">
+              <option>Sekolah</option>
+              <?php foreach ($s02_sklh as $r) {
+                ?>
+                <option value="<?php echo $r->idsklh; ?>"><?php echo $r->Nama; ?></option>
+                <?php
+              } ?>
+            </select>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-school"></span>
+              </div>
+            </div>
+        </div>
+
         <div class="row">
           <!-- <div class="col-8">
             <div class="icheck-primary">
