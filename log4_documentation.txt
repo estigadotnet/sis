@@ -1,0 +1,53 @@
+
+alur proses
+===========
+- start
+- user akses ke localhost/sis
+- default route: dashboard
+- show dashboard
+- end
+
+keterangan per menu
+===================
+# Dashboard (Demo)
+	- nantinya pada content (bagian tengah halaman) akan diisi informasi mengenai summary report,
+	- tunggu konfirmasi dari user mengenai isi content
+	- berfungsi sebagai halaman awal aplikasi
+
+# SETUP
+	Tahun Ajaran
+		- daftar informasi Tahun Ajaran, baik yang sedang berjalan, atau yang telah lalu
+		- sebagai informasi acuan apabila diperlukan untuk pengolahan data
+
+	Sekolah
+		- daftar informasi Sekolah-sekolah yang dikelola
+
+	Kelas
+		- daftar informasi Kelas yang ada pada masing-masing Sekolah
+
+	Guru
+		- daftar informasi Guru Wali Kelas yang mengajar pada masing-masing Sekolah
+
+	Siswa
+		- daftar informasi Siswa pada masing-masing Sekolah
+
+# DAFTAR
+	Kelas
+		- daftar informasi Kelas aktif yang digunakan dalam proses belajar pada Tahun Ajaran yang sedang berlangsung
+		- terdiri dari informasi :
+			- Tahun Ajaran
+			- Nama Sekolah
+			- Nama Kelas
+			- Nama Guru
+			- Kumpulan Nama Siswa
+		- daftar informasi Kelas ini apabila dicetak pada lembar kertas akan seperti Daftar Hadir pada tiap Kelas
+
+	Siswa
+		- daftar informasi Siswa aktif pada masing-masing Kelas
+
+
+Ringkasan
+=========
+Daftar Kelas dan Daftar Siswa akan digunakan pada awal Tahun Ajaran untuk proses Penerimaan Siswa baru, -
+dan pada akhir Tahun Ajaran untuk proses Naik Kelas atau Kelulusan
+

@@ -112,11 +112,14 @@
             </div>
           </div> -->
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-3">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
             <!-- <p> -->
             <?php //echo form_submit('submit', lang('login_submit_btn'));?>
             <!-- </p> -->
+          </div>
+          <div class="col-3">
+             <a href="<?php echo site_url(); ?>" class="btn btn-default btn-block">Cancel</a>
           </div>
           <!-- /.col -->
         </div>

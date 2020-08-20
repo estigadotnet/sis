@@ -1,0 +1,13 @@
+skenario:
+- menggunakan harviacode sebagai crud generator
+
+start:
+- extract master harviacode
+- copy hasil extract
+	folder assets
+	folder harviacode
+	ke
+	C:\xampp\htdocs\sis
+- cara running
+	localhost/sis/harviacode
+
