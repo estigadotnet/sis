@@ -41,7 +41,7 @@ class Users extends CI_Controller
             'start' => $start,
         );
         // $this->load->view('users/users_list', $data);
-        $data['_view']    = '/users/users_list';
+        $data['_view']    = 'Users/users_list';
         $data['_caption'] = 'Users';
         $this->load->view('dashboard/_layout', $data);
     }
@@ -72,7 +72,7 @@ class Users extends CI_Controller
 		'phone' => $row->phone,
 	    );
             // $this->load->view('users/users_read', $data);
-            $data['_view']    = '/users/users_read';
+            $data['_view']    = 'Users/users_read';
             $data['_caption'] = 'Users';
             $this->load->view('dashboard/_layout', $data);
         } else {
@@ -107,7 +107,7 @@ class Users extends CI_Controller
 	    'phone' => set_value('phone'),
 	);
         // $this->load->view('users/users_form', $data);
-        $data['_view']    = '/users/users_form';
+        $data['_view']    = 'Users/users_form';
         $data['_caption'] = 'Users';
         $this->load->view('dashboard/_layout', $data);
     }
@@ -175,7 +175,7 @@ class Users extends CI_Controller
 		'phone' => set_value('phone', $row->phone),
 	    );
             // $this->load->view('users/users_form', $data);
-            $data['_view']    = '/users/users_form';
+            $data['_view']    = 'Users/users_form';
             $data['_caption'] = 'Users';
             $this->load->view('dashboard/_layout', $data);
         } else {
@@ -340,7 +340,7 @@ class Users extends CI_Controller
             'start' => 0
         );
 
-        $this->load->view('users/users_doc',$data);
+        $this->load->view('Users/users_doc',$data);
     }
 
 }

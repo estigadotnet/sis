@@ -175,7 +175,7 @@
               <!-- <img src="<?php //echo base_url(); ?>assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
             </div>
             <div class="info">
-              <a href="#" class="d-block"><?php echo $this->session->userdata('user_name'); ?></a>
+              <a href="#" class="d-block"><?php echo $this->session->userdata('username'); ?></a>
             </div>
           </div>
 
