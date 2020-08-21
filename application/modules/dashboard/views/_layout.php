@@ -244,21 +244,21 @@
                 </a>
               </li> -->
 
-              <li class="nav-header">DEMO</li>
+              <!-- <li class="nav-header">DEMO</li> -->
               <!-- grocerycrud -->
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?php echo site_url('examples'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'examples' ? 'active' : ''; ?>">
                   <i class="fas fa-user nav-icon"></i>
                   <p>GroceryCRUD</p>
                 </a>
-              </li>
+              </li> -->
               <!-- welcome -->
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?php echo site_url('welcome'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'welcome' ? 'active' : ''; ?>">
                   <i class="fas fa-user nav-icon"></i>
                   <p>Welcome</p>
                 </a>
-              </li>
+              </li> -->
 
               <!-- setting -->
               <!-- <li class="nav-header">SETTING</li> -->

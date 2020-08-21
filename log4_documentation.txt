@@ -1,4 +1,26 @@
 
+target aplikasi
+===============
+- dapat membuat daftar kelas
+- dapat menyimpan data penerimaan siswa baru
+- dapat melakukan proses naik kelas
+- dapat melakukan proses kelulusan
+- dapat melakukan proses mutasi siswa
+
+
+
+
+object dalam aplikasi
+=====================
+- tahun ajaran
+- sekolah
+- kelas
+- guru
+- siswa
+
+
+
+
 sekarang apa ?
 ==============
 10:25 PM 8/20/2020
@@ -6,6 +28,7 @@ butuh coba proses buat daftar kelas,
 butuh ada data siswa
 butuh ada proses import data dari excel
 progres pengerjaan aplikasi sudah sampai tahap
+
 
 
 
@@ -38,6 +61,7 @@ just note
 
 
 
+
 to do list
 ==========
 - check lagi kegunaan pemilihan data 'tahun ajaran' pada saat login,
@@ -51,6 +75,7 @@ to do list
 
 
 
+
 documentation
 =============
 - change logs
@@ -61,6 +86,7 @@ documentation
 
 
 
+
 alur proses
 ===========
 - start
@@ -68,6 +94,7 @@ alur proses
 - default route: dashboard
 - show dashboard
 - end
+
 
 
 
@@ -108,6 +135,8 @@ keterangan per menu
 
 	Siswa
 		- daftar informasi Siswa aktif pada masing-masing Kelas
+
+
 
 
 Ringkasan
