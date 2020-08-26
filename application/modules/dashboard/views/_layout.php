@@ -237,6 +237,33 @@
                   <p>Kelas</p>
                 </a>
               </li>
+
+              <!-- proses -->
+              <li class="nav-header">PROSES</li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('d01_kls/index2'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Siswa Baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('d01_kls/index2'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Naik Kelas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('d01_kls/index2'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Siswa Lulus</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('d01_kls/index2'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'd01_kls' ? 'active' : ''; ?>">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Mutasi Siswa</p>
+                </a>
+              </li>
               <!-- <li class="nav-item">
                 <a href="<?php //echo site_url('d02_ssw'); ?>" class="nav-link <?php //echo $this->uri->segment(1) == 'd02_ssw' ? 'active' : ''; ?>">
                   <i class="fas fa-users nav-icon"></i>

@@ -1,4 +1,16 @@
 
+yang belum untuk aplikasi modul akademik
+========================================
+6:55 PM 8/21/2020
+	coba input siswa baru
+	buat modul import data siswa dari excel
+	naik kelas
+	lulus
+	mutasi
+	buat daftar kelas
+	
+
+
 target aplikasi
 ===============
 - dapat membuat daftar kelas
